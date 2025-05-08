@@ -74,4 +74,21 @@ public:
         return (*current != NULL);
     }
 
+    void traversal()
+    {
+        if (ListEmpty())
+            cout << "\nList Kosong\n";
+        else
+        {
+            cout << "\nList dalam list adalah:\n";
+            Node *currentNode = START;
+            while (currentNode != NULL)
+            {
+                cout << currentNode->noMhs << " ";
+                currentNode = currentNode->next;
+            }
+            cout << endl;
+        }
+    }
+
 }
