@@ -3,9 +3,22 @@
 #include <string.h>
 using namespace std;
 
-class node 
+class Node 
 {
     public:
     int noMhs;
-    node *next;
+    Node *next;
 };
+class LinkedList
+{
+    Node *START;
+    public:
+    LinkedList()
+    {
+        START = NULL;
+    }
+    void addNode()
+    {
+        
+    }
+}
