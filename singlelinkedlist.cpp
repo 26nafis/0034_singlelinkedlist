@@ -102,5 +102,16 @@ public:
             cout << "\nMahasiswa dengan nomor " << nim << " tidak ditemukan\n";
             return;
         }
+        if (previous == current)
+        {
+            START = START->next;
+        }
+        else
+        {
+            previous->next = current->next;
+        }
+        delete current;
+        cout << "\nMahasiswa dengan nomor " << nim << " berhasil dihapus\n";
+    }
 };
 }
