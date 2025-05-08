@@ -91,4 +91,16 @@ public:
         }
     }
 
+    void deleteNode()
+    {
+        int nim;
+        cout << "\nMasukkan nomor mahasiswa yang akan dihapus: ";
+        cin >> nim;
+        Node *previous, *current;
+        if (!Search(nim, &previous, &current))
+        {
+            cout << "\nMahasiswa dengan nomor " << nim << " tidak ditemukan\n";
+            return;
+        }
+};
 }
