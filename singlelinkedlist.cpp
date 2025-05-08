@@ -114,4 +114,60 @@ public:
         cout << "\nMahasiswa dengan nomor " << nim << " berhasil dihapus\n";
     }
 };
+
+int main()
+{
+    LinkedList mhs;
+    int ch;
+    do
+    {
+        cout << "\nMenu";
+        cout << "\n1. Tambah data";
+        cout << "\n2. Hapus data";
+        cout << "\n3. Tampilkan data";
+        cout << "\n4. Cari data";
+        cout << "\n5. Keluar";
+        cout << "\nPilihan (1-5): ";
+        cin >> ch;
+        switch (ch)
+        {
+        case 1:
+            mhs.addNode();
+            break;
+        case 2:
+            if (mhs.ListEmpty())
+            {
+                cout << "\nList Kosong\n";
+                break;
+            }
+            mhs.deleteNode();
+            break;
+        case 3:
+            mhs.traversal();
+            break;
+        case 4:
+            if (mhs.ListEmpty())
+            {
+                cout << "\nList Kosong\n";
+                break;
+            }
+            Node *previous, *current;
+            int nim;
+            cout << "\nMasukkan nomor mahasiswa yang akan dicari: ";
+            cin >> nim;
+            if (mhs.Search(nim, &previous, &current))
+                cout << "\nMahasiswa dengan nomor " << nim << " ditemukan\n";
+            else
+                cout << "\nMahasiswa dengan nomor " << nim << " tidak ditemukan\n";
+            break;
+        case 5:
+            cout << "\nKeluar dari program\n";
+            break;
+        default:
+            cout << "\nPilihan tidak valid\n";
+            break;
+        }
+    } while (ch != 5);
+
+    return 0;
 }
