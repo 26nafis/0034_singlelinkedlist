@@ -35,4 +35,26 @@ public:
                 cout << "\nDuplikasi nomor tidak diijinkan\n";
                 return;
             }
+            nodebaru->next = START;
+            START = nodebaru;
+            return;
+        }
+
+        Node *previous = START;
+        Node *current = START;
+
+        while (current != NULL && nim > current->noMhs)
+        {
+            if (nim == current->noMhs)
+            {
+                cout << "\nDuplikasi nomor tidak diijinkan\n";
+                return;
+            }
+            previous = current;
+            current = current->next;
+        }
+        nodebaru->next = previous->next;
+        previous->next = nodebaru;
+    }
+
 }
