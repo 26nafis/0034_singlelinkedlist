@@ -19,6 +19,10 @@ class LinkedList
     }
     void addNode()
     {
-        
+        int nim;
+        cout << "\nMasukan Nomer Mahasiswa: ";
+        cin >> nim;
+        Node *nodebaru = new Node;
+        nodebaru->next = NULL;
     }
-}
+};
